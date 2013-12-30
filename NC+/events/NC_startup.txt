@@ -1,0 +1,20 @@
+namespace = nc
+
+narrative_event = {
+	id = nc.1001
+	title = "nc.1001.name"
+	desc = "nc.1001.desc"
+	major = yes
+	hide_new = yes
+	hide_from = yes
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_battle"
+	immediate = {
+		#set_global_flag = VIET_Events_On
+	}
+		
+	option = {
+		name = "nc.1001.a"
+	}
+}
