@@ -20,7 +20,6 @@ action_bad_relations = {
 	
 }
 ####################################
-
 action_improve_relations = {
 	attribute = diplomacy
 	
@@ -40,6 +39,60 @@ action_fabricate_claims = {
 	trigger = {
 		any_province_lord = {
 			NOT = { character = FROM }
+		}
+		OR = {
+			owner = { same_realm = FROM }
+			any_neighbor_province = {
+				owner = {
+					OR = {
+						any_liege = { character = FROM }
+						character = FROM
+					}
+				}
+			}
+			any_neighbor_province = {
+				is_land = no
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							any_liege = { character = FROM }
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			county = {
+				NOT = { claimed_by = FROM }
+				holder_scope = {
+					NOT = { is_liege_of = FROM }
+					NOT = { character = FROM }
+				}
+			}
+			AND = {
+				duchy = {
+					NOT = { claimed_by = FROM }
+					holder_scope = {
+						NOT = { is_liege_of = FROM }
+						NOT = { character = FROM }
+					}
+				}
+				FROM = { ai = no }
+			}
+		}
+		NOT = { continent = region_sahara }
+		NOT = {
+			AND = {
+				owner = { is_merchant_republic = yes }
+				is_capital = yes
+			}
+		}
+		OR = {
+			FROM = { ai = no }
+			FROM = { independent = yes }
+			FROM = { tier = king }
+			owner = { same_realm = FROM }
 		}
 	}
 	
@@ -119,10 +172,6 @@ action_sabotage_economy = {
 	events = { 933 }
 }
 #########################
-
-
-
-
 action_uncover_plots = {
 	attribute = intrigue
 	
@@ -192,7 +241,7 @@ action_train_troops = {
 		}
 	}
 	
-	levy_size = 0.025
+	levy_size = 0.015
 	levy_reinforce_rate = 0.05
 	
 	events = { 941 942 }
@@ -245,6 +294,33 @@ action_inquisition = {
 				}
 				NOT = {
 					has_opinion_modifier = { who = FROM modifier = opinion_sent_preacher }
+				}
+				OR = {
+					AND = {
+						religion = norse_pagan
+						FROM = { religion = catholic }
+					}
+					AND = {
+						culture = polish
+						FROM = { religion = catholic }
+					}
+					AND = {
+						culture = russian
+						FROM = { religion = orthodox }
+					}
+					AND = {
+						culture = hungarian
+						OR = {
+							FROM = { religion = orthodox }
+							FROM = { religion = catholic }
+						}
+					}
+					AND = {
+						religion = west_african_pagan
+						FROM = { religion_group = muslim }
+					}
+					FROM = { trait = zealous }
+					FROM = { ai = no }
 				}
 			}
 			any_province_lord = {

@@ -16,27 +16,72 @@ job_chancellor = {
 	opinion_effect = 15
 	
 	monthly_salary = 0.1
-	monthly_prestige = 0.015
+	monthly_prestige = 0.25
 	
 	allow = {
 		OR = {
+			is_female = no
 			AND = {
-				OR = {
-					is_female = no
-					AND = {
-						religion = cathar
-						liege = { religion = cathar }
-					}
-				}
-				is_adult = yes
+				religion = cathar
+				liege = { religion = cathar }
 			}
 			has_character_flag = special_chancellor
+			liege = {
+				primary_title = {
+					OR = {
+						has_law = true_cognatic_succession
+						has_law = enatic_cognatic_succession
+						has_law = enatic_succession
+					}
+				}
+			}
+			AND = {
+				has_global_flag = gender_equality
+				NOT = { liege = { religion_group = muslim } }
+			}
 		}
-		
+		OR = {
+			is_adult = yes
+			has_character_flag = special_chancellor
+		}
 		prisoner = no
 		NOT = { trait = incapable }
 	}
 	gain_effect = {
+		if = {
+			limit = {
+				NOT = { 
+					has_character_flag = council_prestige_bonus
+				}
+			}
+			if = {
+				limit = { FROM = { tier = count } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = duke } }
+				prestige = 100
+			}
+			if = {
+				limit = { FROM = { tier = king } }
+				prestige = 150
+			}
+			if = {
+				limit = { FROM = { tier = emperor } }
+				prestige = 200
+			}
+			set_character_flag = council_prestige_bonus
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_fired_from_council
+				}
+			}
+			remove_opinion = { who = FROM modifier = opinion_fired_from_council }
+			opinion = { who = FROM modifier = opinion_job_security_concerns }
+		}
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -58,28 +103,72 @@ job_marshal = {
 	opinion_effect = 15
 	
 	monthly_salary = 0.1
-	monthly_prestige = 0.015
+	monthly_prestige = 0.25
 	
 	allow = {
 		OR = {
+			is_female = no
 			AND = {
-				OR = {
-					is_female = no
-					AND = {
-						religion = cathar
-						liege = { religion = cathar }
+				religion = cathar
+				liege = { religion = cathar }
+			}
+			liege = {
+				primary_title = {
+					OR = {
+						has_law = enatic_cognatic_succession
+						has_law = enatic_succession
 					}
 				}
-				is_adult = yes
 			}
 			has_character_flag = special_marshal
+			AND = {
+				has_global_flag = gender_equality
+				NOT = { liege = { religion_group = muslim } }
+			}
 		}
-		
+		OR = {
+			is_adult = yes
+			has_character_flag = special_marshal
+		}
 		prisoner = no
 		NOT = { trait = incapable }
 	}
 	
 	gain_effect = {
+		if = {
+			limit = {
+				NOT = { 
+					has_character_flag = council_prestige_bonus
+				}
+			}
+			if = {
+				limit = { FROM = { tier = count } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = duke } }
+				prestige = 100
+			}
+			if = {
+				limit = { FROM = { tier = king } }
+				prestige = 150
+			}
+			if = {
+				limit = { FROM = { tier = emperor } }
+				prestige = 200
+			}
+			set_character_flag = council_prestige_bonus
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_fired_from_council
+				}
+			}
+			remove_opinion = { who = FROM modifier = opinion_fired_from_council }
+			opinion = { who = FROM modifier = opinion_job_security_concerns }
+		}
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -99,26 +188,74 @@ job_treasurer = {
 	opinion_effect = 15
 	
 	monthly_salary = 0.1
-	monthly_prestige = 0.015
+	monthly_prestige = 0.25
 	
 	allow = {
 		OR = {
+			is_female = no
 			AND = {
-				OR = {
-					is_female = no
-					AND = {
-						religion = cathar
-						liege = { religion = cathar }
+				religion = cathar
+				liege = { religion = cathar }
+			}
+			has_character_flag = special_treasurer
+			liege = {
+				primary_title = {
+					NOT = {
+						has_law = agnatic_succession
 					}
 				}
-				is_adult = yes
 			}
+			AND = {
+				has_global_flag = gender_equality
+				NOT = { liege = { religion_group = muslim } }
+			}
+		}
+		OR = {
+			is_female = no
+			NOT = { liege = { religion_group = muslim } }
+		}
+		OR = {
+			is_adult = yes
 			has_character_flag = special_treasurer
 		}
 		prisoner = no
 		NOT = { trait = incapable }
 	}
 	gain_effect = {
+		if = {
+			limit = {
+				NOT = { 
+					has_character_flag = council_prestige_bonus
+				}
+			}
+			if = {
+				limit = { FROM = { tier = count } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = duke } }
+				prestige = 100
+			}
+			if = {
+				limit = { FROM = { tier = king } }
+				prestige = 150
+			}
+			if = {
+				limit = { FROM = { tier = emperor } }
+				prestige = 200
+			}
+			set_character_flag = council_prestige_bonus
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_fired_from_council
+				}
+			}
+			remove_opinion = { who = FROM modifier = opinion_fired_from_council }
+			opinion = { who = FROM modifier = opinion_job_security_concerns }
+		}
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -138,38 +275,48 @@ job_spymaster = {
 	opinion_effect = 15
 	
 	monthly_salary = 0.1
+	monthly_prestige = 0.15
 	
 	allow = {
-		OR = {
-			AND = {
-				OR = {
-					is_female = no
-					liege = { 
-						OR = {
-							mother = { character = FROM }
-							spouse = { character = FROM }
-						}
-					}
-					AND = {
-						religion_group = pagan_group
-						liege = {
-							religion_group = pagan_group
-						}
-					}
-					AND = {
-						religion = cathar
-						liege = { religion = cathar }
-					}
-				}
-				is_adult = yes
-			}
-			has_character_flag = special_spymaster
-		}
-		
+		is_adult = yes
 		prisoner = no
 		NOT = { trait = incapable }
 	}
 	gain_effect = {
+		if = {
+			limit = {
+				NOT = { 
+					has_character_flag = council_prestige_bonus
+				}
+			}
+			if = {
+				limit = { FROM = { tier = count } }
+				prestige = 25
+			}
+			if = {
+				limit = { FROM = { tier = duke } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = king } }
+				prestige = 75
+			}
+			if = {
+				limit = { FROM = { tier = emperor } }
+				prestige = 100
+			}
+			set_character_flag = council_prestige_bonus
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_fired_from_council
+				}
+			}
+			remove_opinion = { who = FROM modifier = opinion_fired_from_council }
+			opinion = { who = FROM modifier = opinion_job_security_concerns }
+		}
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -179,7 +326,6 @@ job_spymaster = {
 	action = action_organize_spies
 	action = action_study_technology
 	action = action_sabotage_economy
-	
 	lift_neighbor_fow = yes
 }
 
@@ -190,28 +336,30 @@ job_spiritual = {
 	opinion_effect = 15
 	
 	monthly_salary = 0.1
-	monthly_piety = 0.015
+	monthly_piety = 0.1
+	monthly_prestige = 0.15
 	
 	allow = {
+		is_adult = yes
 		prisoner = no
 		liege = {
 			religion = ROOT
 		}
+		
 		OR = {
+			is_female = no
 			AND = {
-				is_adult = yes
-				OR = {
-					is_female = no
-					AND = {
-						religion_group = pagan_group
-						NOT = { religion = aztec }
-						NOT = { religion = aztec_reformed}
-						NOT = { religion = tengri_pagan }
-						NOT = { religion = tengri_pagan_reformed}
-					}
-					religion = cathar
-				}
+				religion_group = pagan_group
+				NOT = { religion = aztec }
+				NOT = { religion = aztec_reformed }
+				NOT = { religion = tengri_pagan }
+				NOT = { religion = tengri_pagan_reformed }
 			}
+			AND = {
+				has_global_flag = gender_equality
+				NOT = { liege = { religion_group = muslim } }
+			}
+			religion = cathar
 			has_character_flag = special_spiritual
 		}
 		
@@ -239,6 +387,40 @@ job_spiritual = {
 		}
 	}
 	gain_effect = {
+		if = {
+			limit = {
+				NOT = { 
+					has_character_flag = council_prestige_bonus
+				}
+			}
+			if = {
+				limit = { FROM = { tier = count } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = duke } }
+				prestige = 100
+			}
+			if = {
+				limit = { FROM = { tier = king } }
+				prestige = 150
+			}
+			if = {
+				limit = { FROM = { tier = emperor } }
+				prestige = 200
+			}
+			set_character_flag = council_prestige_bonus
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_fired_from_council
+				}
+			}
+			remove_opinion = { who = FROM modifier = opinion_fired_from_council }
+			opinion = { who = FROM modifier = opinion_job_security_concerns }
+		}
 	}
 	lose_effect = {
 		opinion = { who = FROM modifier = opinion_fired_from_council }
@@ -255,7 +437,7 @@ job_spiritual = {
 	lift_fow = yes
 }
 ##########################################
-# NC+ Vanilla Plugin V0.1
+# NC+PB Plugin V0.1
 ##########################################
 
 job_nc = {
