@@ -1,0 +1,12 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+action_nc1;Test der Jobbeschreibung;;Warnung Aussprechen;;;;;;;;;;;x
+action_nc1_desc;Test der Jobbeschreibung;;Entsendet [GetChancellorName] zu einer diplomatischen Mission, um einem Herrscher eine Wahrung zu überbringen nicht weiter sein Reich auszuweiten. Er droht Ihm mit ernsten Konsequenzen.;;;;;;;;;;;
+action_nc2;Test der Jobbeschreibung;;MARSHAL Test der Jobbeschreibung;;;;;;;;;;;x
+action_nc2_desc;Test der Jobbeschreibung;;MARSHAL Test der Jobbeschreibung;;;;;;;;;;;x
+action_nc3;Test der Jobbeschreibung;;TREASURER Test der Jobbeschreibung;;;;;;;;;;;x
+action_nc3_desc;Test der Jobbeschreibung;;TREASURER Test der Jobbeschreibung;;;;;;;;;;;x
+job_nc;Prälat;;Prälat;;;;;;;;;;;
+desc_job_nc;In der katholischen Kirche wird als Prälat der Inhaber ordentlicher Leitungsbefugnisse  bezeichnet.;;In der katholischen Kirche wird als Prälat der Inhaber ordentlicher Leitungsbefugnisse  bezeichnet.;;;;;;;;;;;
+nc.1001.name;Welcome;;Welcome;;;;;;;;;;;
+nc.1001.desc;Welcome to NC+ ... More infos soon ...;;Welcome to NC+ ..more text to come…;;;;;;;;;;;
+nc.1001.a;OK;;OK;;;;;;;;;;;
