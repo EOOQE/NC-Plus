@@ -197,7 +197,7 @@ guiTypes = {
 			name = "label"
 			position = { x = 134 y = 21 }
 			textureFile = ""
-			font = "vic_18_black"
+			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = "JobName"	
 			maxWidth = 220
@@ -209,7 +209,7 @@ guiTypes = {
 			name = "name"
 			position = { x = 134 y = -8 }
 			textureFile = ""
-			font = "vic_22_black"
+			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "Nisse III"	
 			maxWidth = 250
@@ -220,9 +220,9 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "currentjob"
-			position = { x = 413 y = 21 }
+			position = { x = 134 y = 37 } # x = 413 y = 21
 			textureFile = ""
-			font = "vic_18_black"
+			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = ""	
 			maxWidth = 250
@@ -273,10 +273,10 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "action_box"
-			position = { x = 396 y = 47 }
-			size = { x=180 y=20 } 
-			format = left
-			spacing = 2
+			position = { x = 270 y = 47 }
+			size = { x=242 y=20 }
+			format = right
+			spacing = 3
 		}
 		
 				

@@ -106,13 +106,38 @@ spriteTypes = {
 		texturefile = "gfx\\interface\\job_charity.dds"
 		noOfFrames = 2
 	}
-	
+	##########################################################################
+	spriteType = {
+		name = "GFX_action_oversee_province"
+		texturefile = "gfx\\interface\\job_oversee_province.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_action_pacify_province"
+		texturefile = "gfx\\interface\\job_pacify_province.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_action_sabotage_economy"
+		texturefile = "gfx\\interface\\job_sabotage_economy.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_action_bad_relations"
+		texturefile = "gfx\\interface\\job_war_province.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_action_upgrade_castle"
+		texturefile = "gfx\\interface\\job_upgrade_castle.dds"
+		noOfFrames = 2
+	}
 	spriteType = {
 		name = "GFX_action_nc1"
 		texturefile = "gfx\\interface\\job_improve_relations.dds"
 		noOfFrames = 2
 	}
-spriteType = {
+	spriteType = {
 		name = "GFX_action_nc2"
 		texturefile = "gfx\\interface\\job_charity.dds"
 		noOfFrames = 2
@@ -122,6 +147,6 @@ spriteType = {
 		texturefile = "gfx\\interface\\job_squeeze_peasants.dds"
 		noOfFrames = 2
 	}
-	
+	###########################################################################
 	
 }

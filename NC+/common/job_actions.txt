@@ -7,6 +7,20 @@
 # All modifiers (like 'local_build_time_modifier') are multiplied by the attribute
 
 # Chancellor
+#####################################
+action_bad_relations = {
+	attribute = diplomacy
+	
+	trigger = {
+		any_province_lord = {
+			NOT = { character = FROM }
+			is_theocracy = no
+		}
+	}
+	
+}
+####################################
+
 action_improve_relations = {
 	attribute = diplomacy
 	
@@ -89,6 +103,26 @@ action_advance_eco_tech = {
 }
 
 # Spymaster
+########################
+action_sabotage_economy = {
+	attribute = intrigue
+	
+	trigger = {
+		any_province_lord = {
+			NOT = { is_liege_or_above = FROM }
+			NOT = { character = FROM }
+		}
+	}
+	
+	tech_growth_modifier_economy = -0.02
+	local_tax_modifier = -0.02
+	events = { 933 }
+}
+#########################
+
+
+
+
 action_uncover_plots = {
 	attribute = intrigue
 	

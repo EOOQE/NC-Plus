@@ -45,6 +45,7 @@ job_chancellor = {
 	action = action_improve_relations
 	action = action_fabricate_claims
 	action = action_sow_dissent
+	action = action_bad_relations
 
 	lift_fow = yes
 }
@@ -177,7 +178,8 @@ job_spymaster = {
 	action = action_uncover_plots
 	action = action_organize_spies
 	action = action_study_technology
-
+	action = action_sabotage_economy
+	
 	lift_neighbor_fow = yes
 }
 
